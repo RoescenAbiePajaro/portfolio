@@ -1,3 +1,4 @@
+/* folio.css */
 body {
     background-image: url('background.jpg'); /* Replace with your image path */
     background-size: cover;  /* Ensures the image covers the entire page */
@@ -102,6 +103,38 @@ nav ul li a:hover {
     border-radius: 10px;
     width: 250px;
     text-align: left;
+}
+
+/* About Me Section */
+.about-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.about-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+}
+
+.about-box h3 {
+    font-size: 24px;
+    color: #ff9800;
+}
+
+.about-box h4 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.about-box p {
+    font-size: 16px;
 }
 
 footer {
