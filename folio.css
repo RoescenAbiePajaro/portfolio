@@ -13,7 +13,9 @@ body {
 }
 
 header {
-    background: #1f1f1f;
+    background-image: url('background.jpg'); /* Replace with your image path */
+    background-size: cover;  /* Ensures the image covers the entire page */
+    background-position: center; /* Centers the image */
     padding: 15px;
     position: fixed;
     width: 100%;
@@ -89,6 +91,7 @@ nav ul li a:hover {
     transform: translateY(0);
 }
 
+/* Projects */
 .projects {
     display: flex;
     justify-content: center;
@@ -96,14 +99,20 @@ nav ul li a:hover {
     flex-wrap: wrap;
 }
 
-
 .project {
     background: #1f1f1f;
     padding: 20px;
     border-radius: 10px;
-    width: 250px;
-    text-align: left;
+    width: 300px;
+    text-align: center;
 }
+
+.project-logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
 
 /* About Me Section */
 .about-container {
