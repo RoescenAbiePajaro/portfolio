@@ -1,10 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Home</title>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="folio.css">
+    <title>My Portfolio</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Smooth Scroll Function
+            document.querySelectorAll("nav ul li a").forEach(anchor => {
+                anchor.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute("href").substring(1);
+                    const targetSection = document.getElementById(targetId);
 
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 70,  // Adjust to avoid header overlay
+                        behavior: "smooth"
+                    });
+                });
+            });
+
+            // Scroll Animation
+            const sections = document.querySelectorAll(".section");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            sections.forEach(section => observer.observe(section));
+        });
+    </script>
+</head>
 <body>
-    <p>Abie</p>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section (Image & Name) -->
+    <section class="section home" id="home">
+        <div class="profile-container">
+            <img class="imagess" src="abie.png" alt="Roescen Abie S. Pajaro">
+            <p class="name">Roescen Abie S. Pajaro</p>
+            <p class="school">From Gordon College</p>
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <h2 class="aboutme">About Me</h2>
+        <p>Hi! I'm a 3rd Year Computer Science Student</p>
+    </section>
+
+    <section class="section" id="projects">
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="project">
+                <h3>Project 1</h3>
+                <p>Description of the project.</p>
+            </div>
+            <div class="project">
+                <h3>Project 2</h3>
+                <p>Description of the project.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <h2>Contact</h2>
+        <p>Email: **********@gmail.com</p>
+        <p>Phone Number: +63 ***********</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 My Portfolio</p>
+    </footer>
 </body>
 </html>
